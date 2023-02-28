@@ -19,39 +19,25 @@
   
   *To be filled*
 
-</details> 
-  
-## ATLAS experiment
 
-<details>
-  <summary>Expand</summary>
+  
+  ## ATLAS experiment
+
   
   *To be filled*
 
-</details> 
 
-## Large Hadron Collider
+  ## Large Hadron Collider
 
-<details>
-  <summary>Expand</summary>
   
   *To be filled*
 
-</details> 
 
-## What is a Jet?
-
-<details>
-  <summary>Expand</summary>
+  ## What is a Jet?
   
   *To be filled*
 
-</details> 
-
-### Project description
-
-<details>
-  <summary>Expand</summary>
+  ### Project description
 
   Proton-proton collisions within the ATLAS experiment at The Large Hadron Collider (LHC)
   produce multiple jets. Some of the jets appear more frequent, it is important to separate the
@@ -66,12 +52,7 @@
   Convolutional neural network has been successfully applied to this task within the ATLAS
   collaboration and can be a natural starting point.
 
-</details> 
-
-### Goals:
-
-<details>
-  <summary>Expand</summary>
+  ### Goals:
 
   - Classifying the different jets
   - Experiment with different models and architectures.
