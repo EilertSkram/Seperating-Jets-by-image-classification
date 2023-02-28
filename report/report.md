@@ -6,8 +6,8 @@
 <details>
   <summary>Expand</summary>
 
-  LHC - Large Hadron Collider
-  CNN - A convolutional neural network (CNN) is a type of artificial neural network used primarily for image recognition and processing, due to its ability   to recognize patterns in images. [[1]](https://www.arm.com/glossary/convolutional-neural-network)
+  LHC: Large Hadron Collider
+  CNN: A convolutional neural network (CNN) is a type of artificial neural network used primarily for image recognition and processing, due to its ability   to recognize patterns in images. [[1]](https://www.arm.com/glossary/convolutional-neural-network)
 
 </details> 
 
