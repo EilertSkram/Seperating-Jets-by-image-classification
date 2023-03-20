@@ -21,27 +21,27 @@
 
 
   
-  ## ATLAS experiment
+  ### ATLAS experiment
 
   
   *To be filled*
 
 
-  ## Large Hadron Collider
+  ### Large Hadron Collider
 
   
   *To be filled*
 
 
-  ## What is a Jet?
+  ### What is a Jet?
   
   *To be filled*
   
-  ## What is a Boson?
+  ### What is a Boson?
   
   *To be filled*
 
-  ## Project description
+  ### Project description
 
   Proton-proton collisions within the ATLAS experiment at The Large Hadron Collider (LHC)
   produce multiple jets. Some of the jets appear more frequent, it is important to separate the
@@ -63,6 +63,43 @@
   - If there is time, expand to other particles.
 
 </details> 
+
+
+## Data
+
+<details>
+  <summary>Expand</summary>
+  
+  ### HDF5
+  ** to be filled **
+  
+  ### Custom Dataset
+  ** to be filled **
+  
+  ### Converter
+  convert to png
+  
+  ### Dataframe for tabular data
+
+</details> 
+
+
+## Model
+
+<details>
+  <summary>Expand</summary>
+  
+  ### Initial Model Exploration
+  
+  #### Baseline CNN
+  
+  #### Baseline model for tabular data
+  
+  #### Baseline ensemble
+
+  
+</details> 
+
 
 ## References
 
