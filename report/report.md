@@ -83,6 +83,13 @@
 
 </details> 
 
+## Architecture 
+
+<details>
+  <summary>Expand</summary>
+  
+</details> 
+
 
 ## Model
 
