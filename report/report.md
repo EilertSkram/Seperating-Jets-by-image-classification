@@ -90,6 +90,16 @@
   
   ### Initial Plan
   
+  #### CNN
+  Variation 1: Converting to PNG
+  ![Initial CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/init_cnn.png)
+  
+  Variation 2: Creating custom dataset
+  ![Initial custom dataset CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/init_cstm_cnn.png)
+  
+  #### Ensemble
+  ![Initial ensemble](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/ens.png)
+  
   
 </details> 
 
