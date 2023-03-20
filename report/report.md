@@ -98,7 +98,7 @@
   ![Initial custom dataset CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/init_cstm_cnn.png)
   
   #### Ensemble
-  ![Initial ensemble](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/int_ens.png)
+  ![Initial ensemble](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/init_ens.png)
   
   
 </details> 
