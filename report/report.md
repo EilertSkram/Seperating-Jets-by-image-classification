@@ -41,7 +41,7 @@
   
   *To be filled*
 
-  ### Project description
+  ## Project description
 
   Proton-proton collisions within the ATLAS experiment at The Large Hadron Collider (LHC)
   produce multiple jets. Some of the jets appear more frequent, it is important to separate the
