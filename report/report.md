@@ -8,7 +8,13 @@
 
   LHC - Large Hadron Collider
   
+  ATLAS - asdsadasd
+  
   CNN - A convolutional neural network (CNN) is a type of artificial neural network used primarily for image recognition and processing, due to its ability   to recognize patterns in images. [1]
+  
+  Decision Tree - dasdas
+  
+  Random Forest - adsasda [2]
 
 </details> 
 
@@ -18,20 +24,6 @@
   <summary>Expand</summary>
   
   *To be filled*
-
-
-  
-  ### ATLAS experiment
-
-  
-  *To be filled*
-
-
-  ### Large Hadron Collider
-
-  
-  *To be filled*
-
 
   ### What is a Jet?
   
@@ -56,11 +48,13 @@
   Convolutional neural network has been successfully applied to this task within the ATLAS
   collaboration and can be a natural starting point.
 
-  ### Goals:
+  ### Goals
 
   - Classifying the different jets
   - Experiment with different models and architectures.
   - If there is time, expand to other particles.
+  
+  ### Significance
 
 </details> 
 
@@ -127,5 +121,7 @@
   <summary>Expand</summary>
 
   [1]: https://www.arm.com/glossary/convolutional-neural-network
+  [2]: https://www.ibm.com/topics/random-forest
+  
   
 </details> 
