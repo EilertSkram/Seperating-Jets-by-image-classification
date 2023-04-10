@@ -23,7 +23,7 @@
 <details>
   <summary>Expand</summary>
   
-  *To be filled*
+  In this chapter, we will explore three important topics: jets, bosons, and the deccription and overall goal of this project.
 
   ### What is a Jet?
   
@@ -79,7 +79,7 @@ In summary, the W-boson is a fundamental particle that mediates the weak nuclear
   <summary>Expand</summary>
   
   ### HDF5
-  ** to be filled **
+  HDF5 (Hierarchical Data Format version 5) is a data file format designed to store and organize large and complex data structures, commonly used in scientific and engineering applications. HDF5 files can store a wide range of data types, including numerical, text, and image data, and can be easily accessed and manipulated using a variety of programming languages.
   
   ### Custom Dataset
   ** to be filled **
@@ -146,5 +146,7 @@ In summary, the W-boson is a fundamental particle that mediates the weak nuclear
     "Jet physics at the LHC" lecture notes from CERN: https://home.cern/science/physics/jet-physics-lhc
     "Jet Substructure at the Large Hadron Collider: A Review of Recent Advances in Theory and Machine Learning" article from Annual Review of Nuclear and Particle Science: https://www.annualreviews.org/doi/full/10.1146/annurev-nucl-102019-025022
     "Jet Physics" lecture notes from the University of Oxford: https://www2.physics.ox.ac.uk/sites/default/files/2019-02/Jet_Physics.pdf
+  
+  The HDF Group, the organization responsible for developing and maintaining HDF5: https://www.hdfgroup.org/solutions/hdf5/
   
 </details> 
