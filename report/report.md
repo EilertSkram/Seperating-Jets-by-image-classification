@@ -81,6 +81,14 @@ In summary, the W-boson is a fundamental particle that mediates the weak nuclear
   ### HDF5
   HDF5 (Hierarchical Data Format version 5) is a data file format designed to store and organize large and complex data structures, commonly used in scientific and engineering applications. HDF5 files can store a wide range of data types, including numerical, text, and image data, and can be easily accessed and manipulated using a variety of programming languages.
   
+   ### Images
+  
+  numpy.ndarray, 25x25
+  
+  ### Label
+  
+  signal, binary 0 or 1
+  
   ### Custom Dataset
   ** to be filled **
   
