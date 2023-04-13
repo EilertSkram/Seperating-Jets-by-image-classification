@@ -8,3 +8,9 @@ Can be accessed by clicking [HERE](https://github.com/EilertSkram/Seperating-Jet
 ## Notebooks
 
 ## Project Structure
+|          |      |
+|--------------|-----------|
+| data | link and raw data needed to run notebooks     | 
+| model      | folder containing exported models | 
+| nbs         | folder containing the code of the different notebooks     |
+|  report        | Report    |
