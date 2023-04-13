@@ -21,7 +21,7 @@ Link to Kaggle notebooks:
 ## Project Structure
 |  Folder        |  Description    |
 |--------------|-----------|
-| data | link and raw data needed to run notebooks     | 
-| model      | folder containing exported models | 
-| nbs         | folder containing the code of the different notebooks     |
+| data | Link and raw data needed to run notebooks     | 
+| model      | Folder containing exported models | 
+| nbs         | Folder containing the code of the different notebooks     |
 |  report        | Report    |
