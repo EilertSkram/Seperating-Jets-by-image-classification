@@ -133,10 +133,12 @@ In summary, the W-boson is a fundamental particle that mediates the weak nuclear
   
   
   <img width="571" alt="image" src="https://user-images.githubusercontent.com/54356437/231675841-9632fadf-7e35-4281-be16-6788f8f27e6d.png">
-Using learning rate of 10^(-3) 
+
+  Using learning rate of 10^(-3) 
   
   <img width="336" alt="image" src="https://user-images.githubusercontent.com/54356437/231675564-f959ef10-8e31-4111-aaa1-ff7797c00a8d.png">
-The baseline model yielded an accuracy of 82,189%
+
+  The baseline model yielded an accuracy of 82,189%
   
   #### Baseline model for tabular data
   
