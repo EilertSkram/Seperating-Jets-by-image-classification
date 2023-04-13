@@ -68,7 +68,7 @@ In summary, the W-boson is a fundamental particle that mediates the weak nuclear
   - Experiment with different models and architectures.
   - If there is time, expand to other particles.
   
-  ### Significance
+ 
 
 </details> 
 
@@ -83,28 +83,28 @@ In summary, the W-boson is a fundamental particle that mediates the weak nuclear
   
    ### Images
   
-  numpy.ndarray, 25x25
+  The images are generated from energy sensors and has a resolution of 25x25 pixels, and it is stored in a file format that is a NumPy array (numpy.ndarray).
   
   ### Label
   
-  signal, binary 0 or 1
-  
-  ### Custom Dataset
-  ** to be filled **
-  
-  ### Converter
-  convert to png
-  
-  ### Dataframe for tabular data
+  The target label is the column named signal. Signal is a binary column. 1 indicates a w-boson was found, 0 indicates general jet. 
 
 </details> 
 
-## Architecture 
+## Approach 
 
 <details>
   <summary>Expand</summary>
   
   ### Initial Plan
+  
+  
+  ### Custom HDF5 Dataset
+  Creating a custom HDF5 dataset can be a complex and time-consuming task, requiring careful planning and attention to detail. While HDF5 is a powerful and flexible data format, it can also be difficult to work with, particularly when dealing with large or complex data structures. HDF5 and FastAi lack a good integration. Due to the timeframe of the project, the custom dataset was scrapped after it proved time-consuming. 
+  
+  ### Converter
+  A temporary fix initially was running a script in Kaggle to convert the pictures to PNG, using PIL Image. This was a slow process, but yielded good results.
+  
   
   #### CNN
   Variation 1: Converting to PNG
@@ -128,6 +128,15 @@ In summary, the W-boson is a fundamental particle that mediates the weak nuclear
   ### Initial Model Exploration
   
   #### Baseline CNN
+  Resnet-18 was used as the baseline model, using accuracy as metric for measurement. 
+  `learn = vision_learner(dls,arch="resnet18",  metrics=accuracy)`
+  
+  
+  <img width="571" alt="image" src="https://user-images.githubusercontent.com/54356437/231675841-9632fadf-7e35-4281-be16-6788f8f27e6d.png">
+Using learning rate of 10^(-3) 
+  
+  <img width="336" alt="image" src="https://user-images.githubusercontent.com/54356437/231675564-f959ef10-8e31-4111-aaa1-ff7797c00a8d.png">
+The baseline model yielded an accuracy of 82,189%
   
   #### Baseline model for tabular data
   
