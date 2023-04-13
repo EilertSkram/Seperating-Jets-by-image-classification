@@ -6,7 +6,7 @@
 Can be accessed by clicking [HERE](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/report.md) or by navigating to [./report/report.md](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/report.md)
 
 ## Notebooks
-Code for the notebooks can be found in [./nbs)](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/tree/main/nbs)
+Code for the notebooks can be found in [./nbs](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/tree/main/nbs)
 
 
 Link to Kaggle notebooks:
