@@ -80,16 +80,39 @@ In summary, the W-boson is a fundamental particle that mediates the weak nuclear
   
   ### HDF5
   HDF5 (Hierarchical Data Format version 5) is a data file format designed to store and organize large and complex data structures, commonly used in scientific and engineering applications. HDF5 files can store a wide range of data types, including numerical, text, and image data, and can be easily accessed and manipulated using a variety of programming languages.
+
+### Label
+The structure of the dataset we are working with is tabular data stored in tables.
+ The target label is the table/column named signal. Signal is a binary column. 1 indicates a w-boson was found, 0 indicates general jet. 
+  ![Initial CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/hdf5_tables.png)
+
+### Images
+All tables in the dataset, except for the image data, consist of a single column. The image data differs in that it is made up of 25 tables with 25 rows with a single float number in each cell, forming a 25x25 pixel single channel image. The row at the same indices in each table sequentially relates to a row of pixels of the same image where the first table contains the top row, and the 25th table contains the last. This is the same as the NumPy array format. The images are generated from energy sensors.
+![InitialCNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/hdf5_image.png)
+
+### Jet data
+jet_pt: "Transverse momentum", meaning the magnitude of the momentum that the jet has across the beam direction. This is a proxy for the energy of the jet.
+
+jet_eta:  A measure of how far the jet is from the beam direction. Eta=0 corresponds to 90 degrees:  Almost all processes will be symmetric around eta=0. See the precise definition here: https://en.wikipedia.org/wiki/Pseudorapidity. 
+
+jet_phi: Angle that measures the position in the plane perpendicular to the beam direction. Here, there should be complete rotational symmetry.
+
+jet_mass: A measure of the mass of the object that created the jet. If the W decays to only quarks, the jet_mass is expected to be equal to the W mass. For QCD jets (like those found in events with label 0), there is no known expected value, but the value is typically much smaller than in W events.
+
+jet_delta_R: Angular distance (actually sqrt(delta_eta^2 + delta_phi^2)) between the two most energetic jets in the event. 0 if there is no more than one jet. 
+
+tau-variables: Substructure within the jet, meaning that the jet is actually a collection of several narrower jets. More details here: https://arxiv.org/pdf/1011.2268.pdf.
   
-   ### Images
-  
-  The images are generated from energy sensors and has a resolution of 25x25 pixels, and it is stored in a file format that is a NumPy array (numpy.ndarray).
-  
-  ### Label
-  
-  The target label is the column named signal. Signal is a binary column. 1 indicates a w-boson was found, 0 indicates general jet. 
+### Dividing the dataset
+Because of the data being structured in tables, the dividing of the dataset is not strictly straight forward. The difficulty increases when we take into account the wish to maintain the 50/50 signal distribution throughout the subsets. Here are the distributions:
+ ![Initial CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/signal_distribution.png)
+
+[Script used for splitting dataset](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/dividing-the-hdf5-dataset-into-train-test-and-val.ipynb)
+
+
 
 </details> 
+ 
 
 ## Approach 
 
