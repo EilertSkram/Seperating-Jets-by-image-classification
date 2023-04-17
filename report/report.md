@@ -3,8 +3,6 @@
 
 ### Abbreviations
 
-<details>
-  <summary>Expand</summary>
 
   LHC - Large Hadron Collider
   
@@ -16,12 +14,11 @@
   
   Random Forest - adsasda [2]
 
-</details> 
+
 
 ## Introduction
 
-<details>
-  <summary>Expand</summary>
+
   
   In this chapter, we will explore three important topics: jets, bosons, and the deccription and overall goal of this project.
 
@@ -70,14 +67,9 @@ In summary, the W-boson is a fundamental particle that mediates the weak nuclear
   
  
 
-</details> 
-
 
 ## Data
 
-<details>
-  <summary>Expand</summary>
-  
   ### HDF5
   HDF5 (Hierarchical Data Format version 5) is a data file format designed to store and organize large and complex data structures, commonly used in scientific and engineering applications. HDF5 files can store a wide range of data types, including numerical, text, and image data, and can be easily accessed and manipulated using a variety of programming languages.
 
@@ -109,15 +101,10 @@ Because of the data being structured in tables, the dividing of the dataset is n
 
 [Script used for splitting dataset](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/dividing-the-hdf5-dataset-into-train-test-and-val.ipynb)
 
-
-
-</details> 
  
 
 ## Approach 
 
-<details>
-  <summary>Expand</summary>
   
   ### Initial Plan
   
@@ -139,35 +126,61 @@ Because of the data being structured in tables, the dividing of the dataset is n
   #### Ensemble
   ![Initial ensemble](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/init_ens.png)
   
-  
-</details> 
+
+ ## CNN
+
+ 
+### Model Exploration
+Due to Kaggle’s limited computing power, an active choice to explore less demanding models was made. The models chosen were ConvNext and Resnet. The micro dataset was used, containing 10% of the overall images, totalling 87266 images with a 50/50 split of W-boson and general jets. 
+
+The exploration was done by resizing the images from 25x25 pixels to 64x64 pixels, meeting the minimum requirement of ConvnNext. The resizing was done via FastAI’s item transformation-method as ``item_tfms=[Resize(64, method='squish')]``.
+
+Pre-trained models were used, setting fine tuning for 5 epochs, then repeat the process with varying levels of architectural complexity.
+
+|  Model | Accuracy after 5 epochs |
+|--------- |--------- |
+| Resnet18 | 78% |
+| Resnet26 | 75% |
+| Resnet59 | 69% |
+| ConvNext_tiny | 80,2% |
+| ConvNext_small | 80,1% |
+| ConvNext_large | 79,6%|
 
 
-## Model
+Both architectures performed reasonably well. However, attempting to increase the complexity of the architecture by adding additional convolutional layers, we found that the accuracy of the model actually decreased. In fact, we observed a consistent trend where the accuracy decreased as the complexity of the model increased, indicating that a more complex architecture was not necessarily better. The trend was hypothesized to be connected to the simplistic and small image size, meaning additional convolutions wouldn't necessarily add information gain.
 
-<details>
-  <summary>Expand</summary>
-  
-  ### Initial Model Exploration
-  
-  #### Baseline CNN
-  Resnet-18 was used as the baseline model, using accuracy as metric for measurement. 
-  `learn = vision_learner(dls,arch="resnet18",  metrics=accuracy)`
-  
-  
-  <img width="571" alt="image" src="https://user-images.githubusercontent.com/54356437/231675841-9632fadf-7e35-4281-be16-6788f8f27e6d.png">
+## Fine Tuning
 
-  Using learning rate of 10^(-3) 
-  
-  <img width="336" alt="image" src="https://user-images.githubusercontent.com/54356437/231675564-f959ef10-8e31-4111-aaa1-ff7797c00a8d.png">
+From the initial exploration on the micro dataset, ConvNext’s model ``convnext_tiny`` was found to be the best architecture with a baseline of 80,2% accuracy.
 
-  The baseline model yielded an accuracy of 82,189%
+Using the method ``lr_find`` from FastAI, the custom l 
+ 
+ 
+ 
+## Tabular Data - Decision Trees
+
+To verify that using CNN for classifying Jets was a competitive approach, variations of decision trees were created for the tabular data in the Jet-dataset. Similar to the CNN-baseline model, little to no tweaks to the dataset was done. The task is a binary classification problem, so F1 score was used as the metric of performance regarding accuracy and recall.
+
+ 
+
+One decision tree and three decision tree ensembles were run, mainly relying on the SKLearn library. Cross validation was used with the fold variable as ``cv = 10``, meaning the data will be divided into 10 equal parts and the model will be trained and evaluated 10 times, with each part used as the validation data once. The mean and standard deviation of the scores for each model was then calculated and printed. 
+
+ 
+|  Model | F1 Score Mean | F1 Score Standard deviation|
+|--------- |--------- | ------ |
+| XGBoost | 0.813 | 0.00096 |
+| SKLearn Gradient Boost | 0.809 | 0.00104985 |
+| SKLearn Random Forest | 0.8104 | 0.0014667 |
+| SKLearn Decision Tree | 0.732 | 0.001601 |
+
+
+XGBoost and Random Forest performed the best out of the four, resulting in F1 scores of 81,3 and 81,0 respectively, thus being chosen as the tabular data-models for the CNN-model to compete with.
+
+
+
+
   
-  #### Baseline model for tabular data
-  
-  #### Baseline ensemble
-  
-  ### Baseline mean image
+  ## Baseline mean image
 
 ![Initial CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/jet_batch.png)
 
@@ -205,19 +218,13 @@ The method calculates the absolute difference between the mean value of the inpu
 Our initial hypothesis that boson data has low diversity was wrong. If our hypothesis was right, we would have gotten a higher accuracy, but the baseline image predictor is not better than guesswork. This shows the diversity of the data, and we need a more sophisticated way of identifying patterns in the data.
 
 
-  
-</details> 
+
 
 ## Conclusion and discussion
-<details>
-  <summary>Expand</summary>
-  dasdasdaslkdjada
-</details> 
+
 
 ## References
 
-<details>
-  <summary>Expand</summary>
 
   [1]: https://www.arm.com/glossary/convolutional-neural-network
   [2]: https://www.ibm.com/topics/random-forest
@@ -234,4 +241,4 @@ Our initial hypothesis that boson data has low diversity was wrong. If our hypot
   
   The HDF Group, the organization responsible for developing and maintaining HDF5: https://www.hdfgroup.org/solutions/hdf5/
   
-</details> 
+
