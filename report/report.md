@@ -166,6 +166,44 @@ Because of the data being structured in tables, the dividing of the dataset is n
   #### Baseline model for tabular data
   
   #### Baseline ensemble
+  
+    #### Baseline mean image
+
+![Initial CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/jet_batch.png)
+
+The figure displays one of the batches in the early state of the project. At first glance, it looks like the boson images have a common occurring pattern that is different from the general images. In the boson images, we can see that the pixels in the middle are more activated and are appearing in a straight line, while in the general images, the activations are more sparse.
+
+If this is the case, we can produce a mean image for both classes and use this image to predict whether the image is a boson or general. This can be used as a baseline for measuring the performance of the CNN models. The experiment can be found in the file mean-image-baseline.ipynb. To make the image, we used 314,160 samples from the dataset.
+
+
+  ![Initial CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/jet_boson_mean.png)
+
+The mean boson image supports our hypothesis, as we can see that the most active pixels form a line in the center of the image. Before starting to compare the images, we also made a mean general image.
+
+
+  ![Initial CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/jet_general_mean.png)
+
+
+As you can see, there are no major differences, so our expectations for using it for prediction are low.
+
+
+
+To calculate the similarities of the vectors, we used two approaches.
+
+Cosine Similarity:
+
+"Cosine similarity measures the similarity between two vectors of an inner product space. It is measured by the cosine of the angle between two vectors and determines whether two vectors are pointing in roughly the same direction." (source: https://www.sciencedirect.com/topics/computer-science/cosine-similarity)
+
+To implement this, we used the sklearn implementation of cosine with some additional functionality. We used a number of different thresholds to optimize the output. To make this as fast as possible, we used the smallest subset (jet-images_val). The best result was an accuracy of 0.55.
+
+Absolute difference:
+
+The method calculates the absolute difference between the mean value of the input array and the mean value of two reference arrays, and then makes a prediction based on which reference array has a smaller absolute difference. With this, we got an accuracy of 0.58.
+
+Conclusion:
+
+Our initial hypothesis that boson data has low diversity was wrong. If our hypothesis was right, we would have gotten a higher accuracy, but the baseline image predictor is not better than guesswork. This shows the diversity of the data, and we need a more sophisticated way of identifying patterns in the data."
+
 
   
 </details> 
