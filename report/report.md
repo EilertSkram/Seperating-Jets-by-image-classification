@@ -105,7 +105,7 @@ tau-variables: Substructure within the jet, meaning that the jet is actually a c
   
 ### Dividing the dataset
 Because of the data being structured in tables, the dividing of the dataset is not strictly straight forward. The difficulty increases when we take into account the wish to maintain the 50/50 signal distribution throughout the subsets. Here are the distributions:
- ![Initial CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/signal_distribution.png)
+ ![Initial CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/signal_distribution.PNG)
 
 [Script used for splitting dataset](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/dividing-the-hdf5-dataset-into-train-test-and-val.ipynb)
 
