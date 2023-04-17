@@ -167,7 +167,7 @@ Because of the data being structured in tables, the dividing of the dataset is n
   
   #### Baseline ensemble
   
-    #### Baseline mean image
+  #### Baseline mean image
 
 ![Initial CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/jet_batch.png)
 
