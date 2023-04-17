@@ -16,7 +16,10 @@ Link to Kaggle notebooks:
 
 [Data converter(PNG and CSV)](https://www.kaggle.com/code/eilskr/boson-convert-manual/)
 
-[CNN basemodel](https://www.kaggle.com/code/eilskr/w-boson-cnn)
+[CNN exploration](https://www.kaggle.com/code/eilskr/w-boson-cnn-exploration)
+
+[CNN tuned model](https://www.kaggle.com/eilskr/w-boson-cnn-final/)
+
 
 ## Project Structure
 |  Folder        |  Description    |
