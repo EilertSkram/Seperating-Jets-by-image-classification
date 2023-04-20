@@ -12,7 +12,7 @@
   
   Decision Tree - dasdas
   
-  Random Forest - adsasda [2]
+  Random Forest - Random Forest is a supervised machine learning algorithm that is used for classification, regression, and other tasks. It is an ensemble learning method that combines multiple decision trees into a single model. Each decision tree in the Random Forest is trained on a random subset of the training data and a random subset of the features. The output of the Random Forest is determined by aggregating the results of all the decision trees in the ensemble, using either the mode (for classification) or the mean (for regression). Random Forest has several advantages over single decision trees, such as reduced overfitting, increased accuracy, and the ability to handle missing values and outliers. [2]
 
 
 
