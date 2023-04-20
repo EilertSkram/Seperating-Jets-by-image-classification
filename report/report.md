@@ -30,9 +30,11 @@ When two particles collide at high energies, they can create a shower of new par
 
 Jets can be observed and studied using particle detectors such as the ones found in particle accelerators. By measuring the energy and momentum of the particles in the jet, physicists can infer information about the properties of the partons that produced the jet and the strong force that governs their interactions.
 
-Jets are important in particle physics because they are a signature of high-energy collisions and provide a way to study the properties of the fundamental particles and their interactions. They also play a crucial role in the search for new particles and phenomena beyond the Standard Model of particle physics, such as the Higgs boson and supersymmetric particles, which may produce distinctive signatures in the form of jets.
+Jets are important in particle physics because they are a signature of high-energy collisions and provide a way to study the properties of the fundamental particles and their interactions. They also play a crucial role in the search for new particles and phenomena beyond the Standard Model of particle physics, such as the Higgs boson and supersymmetric particles, which may produce distinctive signatures in the form of jets. [3]
 
-[3][4][5][6]
+[4]
+[5]
+[6]
   
   ### What is a Boson?
   
@@ -266,8 +268,11 @@ Our initial hypothesis that boson data has low diversity was wrong. If our hypot
 
 
   [1]: https://www.arm.com/glossary/convolutional-neural-network
+  
   [2]: https://www.ibm.com/topics/random-forest
+  
   [3]: https://pdg.lbl.gov/2020/reviews/rpp2020-rev-w-boson.pdf
+  
   [4]: https://www2.lbl.gov/abc/w/w.html "Weak Interactions and W Bosons" article from the University of California, Berkeley 
   [5]: https://cerncourier.com/a/discovery-of-the-w-and-z-bosons/ "Discovery of the W and Z bosons" article from the CERN Courier
   [6]:  https://www.fnal.gov/pub/science/particle-physics/mysteries/wz-bosons.html "The W and Z Bosons" article from Fermilab 
