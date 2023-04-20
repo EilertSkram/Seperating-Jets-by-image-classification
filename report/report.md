@@ -19,8 +19,7 @@
 ## Introduction
 
 
-  
-  In this chapter, we will explore three important topics: jets, bosons, and the deccription and overall goal of this project.
+  In this project, we aim to explore the feasibility of using image classification to separate W-boson from general jets. The project uses generated data from the ATLAS project and modern deep learning libraries like FastAI.
 
   ### What is a Jet?
   
