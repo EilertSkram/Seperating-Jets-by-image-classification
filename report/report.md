@@ -149,12 +149,15 @@ Pre-trained models were used, setting fine tuning for 5 epochs, then repeat the 
 
 Both architectures performed reasonably well. However, attempting to increase the complexity of the architecture by adding additional convolutional layers, we found that the accuracy of the model actually decreased. In fact, we observed a consistent trend where the accuracy decreased as the complexity of the model increased, indicating that a more complex architecture was not necessarily better. The trend was hypothesized to be connected to the simplistic and small image size, meaning additional convolutions wouldn't necessarily add information gain.
 
-## Fine Tuning
+### Fine Tuning CNN
+Based on the initial exploration of the micro dataset, the ConvNext model architecture, specifically the ``convnext_tiny`` variant, was determined to be the most effective with a baseline accuracy of 80.2%.
 
-From the initial exploration on the micro dataset, ConvNext’s model ``convnext_tiny`` was found to be the best architecture with a baseline of 80,2% accuracy.
+To determine an optimal learning rate for the model, the FastAI method ``lr_find`` was utilized. For simplicity, ``lr.valley`` was selected.
 
-Using the method ``lr_find`` from FastAI, the custom l 
- 
+Next, the model was fine-tuned using the FastAI ``fine_tune`` method over a period of 20 epochs. An early stoppage callback-function with ``patience=3`` and ``min_delta=0.01`` was implemented. In this context, early stoppage refers to the stopping of the model if no improvement of at least 0.01 is observed between the best measured value and the current value after three epochs.
+
+The fine-tuning process was conducted on the micro/training dataset. The final model achieved an accuracy of Y after X epochs.
+
  
  
 ## Tabular Data - Decision Trees
