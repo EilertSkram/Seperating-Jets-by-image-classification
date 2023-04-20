@@ -111,8 +111,6 @@ Because of the data being structured in tables, the dividing of the dataset is n
 ## Approach 
 
   
-
-  
 ### Initial Plan
 Initially we wanted to compare the performance of two models trained on the tabular data and the images respectively.
 
@@ -154,17 +152,47 @@ Function from the dataset class:
         return image, label
         
   ```
+This approach finally allowed us to train the model using a pretrained image classifier, and the model varied between 55 and 79% accuracy. Even though the model trained without any major problems, none of the display functions like show_batch and show_results worked. More importantly, other functions like ClassificationInterpretation could not be implemented either.
 
-  
-  #### CNN
-  Variation 1: Converting to PNG
-  ![Initial CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/init_cnn.png)
-  
-  Variation 2: Creating custom dataset
-  ![Initial custom dataset CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/init_cstm_cnn.png)
-  
-  #### Ensemble
-  ![Initial ensemble](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/init_ens.png)
+We created our own “show batch” function and made some minor progress, but in the end it was impossible to subvert all of the challenges using the top level api. 
+
+Custom show batch:
+  ![Initial show batch](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/csb2.png)
+ 
+ #### Approach 2.1: Datablock
+
+Using [fastai’s datablock approach t](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/imageblock-with-custom-get-x-function.ipynb) approach worked with very little modification, and we could use the hdf5 files without any modification. 
+ 
+Code for creating datablocks:
+```
+
+path = '/kaggle/input/jet-images-train-val-test/jet-images_train.hdf5'
+classes = ["general", "W-boson"]
+    
+h5_file = h5py.File(path, 'r')
+signal_data = h5_file['signal']
+image_data = h5_file['image']
+
+def label_func(x):
+    signal = signal_data[int(x)]
+    return classes[int(signal)]
+
+def get_items(x):
+    l = len(image_data)
+    return [str(i) for i in range(l)]
+
+def get_x(x):
+    return torch.from_numpy(image_data[int(x)])
+dblock = DataBlock(blocks    = (ImageBlock, CategoryBlock),
+                   get_items = get_items,
+                   get_x = get_x,
+                   get_y     = label_func,
+                   splitter  = RandomSplitter(),)
+
+```
+
+This is the approach that the rest of the project is built upon.
+
   
 
  ## CNN
