@@ -187,11 +187,9 @@ Both architectures performed reasonably well. However, attempting to increase th
 ### Fine Tuning CNN
 Based on the initial exploration of the micro dataset, the ConvNext model architecture, specifically the ``convnext_tiny`` variant, was determined to be the most effective with a baseline accuracy of 80.2%.
 
-To determine an optimal learning rate for the model, the FastAI method ``lr_find`` was utilized. For simplicity, ``lr.valley`` was selected.
-
 Next, the model was fine-tuned using the FastAI ``fine_tune`` method over a period of 20 epochs. An early stoppage callback-function with ``patience=3`` and ``min_delta=0.01`` was implemented. In this context, early stoppage refers to the stopping of the model if no improvement of at least 0.01 is observed between the best measured value and the current value after three epochs.
 
-The fine-tuning process was conducted on the micro/training dataset. The final model achieved an accuracy of Y after X epochs.
+The fine-tuning process was conducted on the micro dataset and validated using the test dataset. The method ``validate``could not be run due to errors with the dataloaders and the HDF5 datasets, so a workaround was finetuning 1 epoch on the test data. The final model achieved an accuracy of Y after X epochs.
 
  
  
