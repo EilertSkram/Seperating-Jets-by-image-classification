@@ -274,6 +274,7 @@ To calculate the similarities of the vectors, we used two approaches.
 #### Cosine Similarity
 
 > Cosine similarity measures the similarity between two vectors of an inner product space. It is measured by the cosine of the angle between two vectors and determines whether two vectors are pointing in roughly the same direction. 
+
 [12]
 
 To implement this, we used the sklearn implementation of cosine with some additional functionality. We used a number of different thresholds to optimize the output. To make this as fast as possible, we used the smallest subset (jet-images_val). The best result was an accuracy of 0.55.
@@ -346,6 +347,7 @@ Lastly the overall conclusion is that the project is considered a success, justi
   [11]: https://www.hdfgroup.org/solutions/hdf5/ 
 
   Getting to Know Your Data 2.4.7 Cosine Similarity 
+
   [12]: https://www.sciencedirect.com/topics/computer-science/cosine-similarity
   
 
