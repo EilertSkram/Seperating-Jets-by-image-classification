@@ -110,7 +110,7 @@ Because of the data being structured in tables, the dividing of the dataset is n
   
   
   ### Custom HDF5 Dataset
-  Creating a custom HDF5 dataset can be a complex and time-consuming task, requiring careful planning and attention to detail. While HDF5 is a powerful and flexible data format, it can also be difficult to work with, particularly when dealing with large or complex data structures. HDF5 and FastAi lack a good integration. Due to the timeframe of the project, the custom dataset was scrapped after it proved time-consuming. 
+  Initially we wanted to create a custom HDF5 dataset to simplify the process of getting the data into datablock and dataloaders. While HDF5 is a powerful and flexible data format, it can also be difficult to work with, particularly when dealing with large or complex data structures. HDF5 and FastAi lack a good integration. Due to the timeframe of the project, the custom dataset was scrapped after it proved time-consuming. 
   
   ### Converter
   A temporary fix initially was running a script in Kaggle to convert the pictures to PNG, using PIL Image. This was a slow process, but yielded good results.
