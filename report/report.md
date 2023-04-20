@@ -267,7 +267,7 @@ Our initial hypothesis that boson data has low diversity was wrong. If our hypot
 
   [1]: https://www.arm.com/glossary/convolutional-neural-network
   [2]: https://www.ibm.com/topics/random-forest
-  [3]: https://pdg.lbl.gov/2020/reviews/rpp2020-rev-w-boson.pdf  "W and Z bosons" article from the Particle Data Group 
+  [3]: https://pdg.lbl.gov/2020/reviews/rpp2020-rev-w-boson.pdf
   [4]: https://www2.lbl.gov/abc/w/w.html "Weak Interactions and W Bosons" article from the University of California, Berkeley 
   [5]: https://cerncourier.com/a/discovery-of-the-w-and-z-bosons/ "Discovery of the W and Z bosons" article from the CERN Courier
   [6]:  https://www.fnal.gov/pub/science/particle-physics/mysteries/wz-bosons.html "The W and Z Bosons" article from Fermilab 
