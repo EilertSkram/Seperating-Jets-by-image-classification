@@ -135,7 +135,7 @@ Converting back and forth was not ideal as some precision might be lost in the c
   #### Custom HDF5 Dataset Class
 Approach 2: Creating a custom dataset
   ![Initial custom dataset CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/init_cstm_cnn.png)
-  Creating a custom HDF5 INSERT LINK TO CUSTOM dataset we have to make our own custom dataset class. This way when the dataloader “asked” for the next image, it would use the function we created and get a ndarray from the hdf5 file instead.
+  [Creating a custom dataset](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/customdl.ipynb) we have to make our own custom dataset class. This way when the dataloader “asked” for the next image, it would use the function we created and get a ndarray from the hdf5 file instead.
 
 Function from the dataset class:
 ```    
@@ -157,11 +157,11 @@ This approach finally allowed us to train the model using a pretrained image cla
 We created our own “show batch” function and made some minor progress, but in the end it was impossible to subvert all of the challenges using the top level api. 
 
 Custom show batch:
-  ![Initial show batch](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/csb2.png)
+  ![Initial show batch](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/cbs2.png)
  
  #### Approach 2.1: Datablock
 
-Using [fastai’s datablock approach t](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/imageblock-with-custom-get-x-function.ipynb) approach worked with very little modification, and we could use the hdf5 files without any modification. 
+Using [fastai’s datablock approach](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/imageblock-with-custom-get-x-function.ipynb)  worked with very little modification, and we could use the hdf5 files without any modification. 
  
 Code for creating datablocks:
 ```
