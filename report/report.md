@@ -274,28 +274,36 @@ Our initial hypothesis that boson data has low diversity was wrong. If our hypot
   [3]: https://pdg.lbl.gov/2020/reviews/rpp2020-rev-w-boson.pdf
   
   "Weak Interactions and W Bosons" article from the University of California, Berkeley 
+  
   [4]: https://www2.lbl.gov/abc/w/w.html 
   
   "Discovery of the W and Z bosons" article from the CERN Courier
+  
   [5]: https://cerncourier.com/a/discovery-of-the-w-and-z-bosons/ 
   
   "The W and Z Bosons" article from Fermilab 
+  
   [6]:  https://www.fnal.gov/pub/science/particle-physics/mysteries/wz-bosons.html 
   
   "Jets in Particle Physics" article from the Particle Data Group 
+  
   [7]:   https://pdg.lbl.gov/2019/reviews/rpp2019-rev-jets.html 
   
   
   "Jet physics at the LHC" lecture notes from CERN
+  
   [8]:  https://home.cern/science/physics/jet-physics-lhc  
   
   "Jet Substructure at the Large Hadron Collider: A Review of Recent Advances in Theory and Machine Learning" article from Annual Review of Nuclear and Particle Science 
+  
   [9]:  https://www.annualreviews.org/doi/full/10.1146/annurev-nucl-102019-025022 
   
   "Jet Physics" lecture notes from the University of Oxford
+  
   [10]:  https://www2.physics.ox.ac.uk/sites/default/files/2019-02/Jet_Physics.pdf 
   
   The HDF Group, the organization responsible for developing and maintaining HDF5
+  
   [11]: https://www.hdfgroup.org/solutions/hdf5/ 
   
 
