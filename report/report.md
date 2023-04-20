@@ -135,7 +135,8 @@ Approach 2: Creating a custom dataset
   Creating a custom HDF5 INSERT LINK TO CUSTOM dataset we have to make our own custom dataset class. This way when the dataloader “asked” for the next image, it would use the function we created and get a ndarray from the hdf5 file instead.
 
 Function from the dataset class:
-```    def __getitem__(self, idx):
+```    
+      def __getitem__(self, idx):
         if self.data is None:
             _data = h5py.File(self.file_path, 'r')['image']
             self.data = _data
