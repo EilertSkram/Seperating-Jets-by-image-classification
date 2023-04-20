@@ -285,7 +285,7 @@ To implement this, we used the sklearn implementation of cosine with some additi
 
 The method calculates the absolute difference between the mean value of the input array and the mean value of two reference arrays, and then makes a prediction based on which reference array has a smaller absolute difference. With this, we got an accuracy of 0.58.
 
-#### Conclusion
+#### Conclusion on mean image experiment
 
 Our initial hypothesis that boson data has low diversity was wrong. If our hypothesis was right, we would have gotten a higher accuracy, but the baseline image predictor is not better than guesswork. This shows the diversity of the data, and we need a more sophisticated way of identifying patterns in the data.
 
