@@ -290,6 +290,9 @@ The method calculates the absolute difference between the mean value of the inpu
 Our initial hypothesis that boson data has low diversity was wrong. If our hypothesis was right, we would have gotten a higher accuracy, but the baseline image predictor is not better than guesswork. This shows the diversity of the data, and we need a more sophisticated way of identifying patterns in the data.
 
 
+### Results of CNN the model
+
+
 
 
 ## Conclusion and discussion
