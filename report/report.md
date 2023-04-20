@@ -106,15 +106,48 @@ Because of the data being structured in tables, the dividing of the dataset is n
 ## Approach 
 
   
+<details>
+  <summary>Expand</summary>
+  
   ### Initial Plan
+Initially we wanted to compare the performance of two models trained on the tabular data and the images respectively.
+
+#### Random forest
+We picked random forest at random, and created a model that got close to 80% accuracy. Notably, to be able to use the sklearn’s top level api we had to flatten the tables into a single tabular datafile.
+
+#### Fastai image classifier
+We got completely stuck when trying to create the image classifier. There seemed to be a compatibility issue as all of the top level api’s expected the images to be in separate files, and to be given a list of paths to the files. 
+
+### Divide and conquer
+ There was little documentation to help with our specific problem, however, we found some promising work of people creating custom datasets from hdf5 files. This custom dataset approach was not directly applicable to our situation, but it was close enough to warrant taking a closer look. 
+As there was no guarantee it would lead anywhere, we divided the workflow and explored two different avenues at the same time: custom dataset, and converting the numpy array to png.
+ 
   
-  
-  ### Custom HDF5 Dataset
-  Initially we wanted to create a custom HDF5 dataset to simplify the process of getting the data into datablock and dataloaders. While HDF5 is a powerful and flexible data format, it can also be difficult to work with, particularly when dealing with large or complex data structures. HDF5 and FastAi lack a good integration. Due to the timeframe of the project, the custom dataset was scrapped after it proved time-consuming. 
-  
-  ### Converter
-  A temporary fix initially was running a script in Kaggle to convert the pictures to PNG, using PIL Image. This was a slow process, but yielded good results.
-  
+  #### Converter
+  Approach 1: Converting to PNG
+  ![Initial CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/init_cnn.png)
+We created a Kaggle [notebook to convert the pictures to PNG](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/boson-convert-manual.ipynb), using PIL Image. It used a hdf5 file as input, and saved 100.000 images in kaggle’s output folder. The path to the output folder of that notebook was then used by a dataloader in a different notebook. This was a slow process, but ultimately worked and yielded results in the same realm as the random forest. 
+
+Converting back and forth was not ideal as some precision might be lost in the conversion, and the dataset size limitations imposed by Kaggle meant we could only use a subset of our data at the time. This approach was ultimately scrapped as we found success in the other approach.
+
+  #### Custom HDF5 Dataset Class
+Approach 2: Creating a custom dataset
+  ![Initial custom dataset CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/init_cstm_cnn.png)
+  Creating a custom HDF5 INSERT LINK TO CUSTOM dataset we have to make our own custom dataset class. This way when the dataloader “asked” for the next image, it would use the function we created and get a ndarray from the hdf5 file instead.
+
+Function from the dataset class:
+```    def __getitem__(self, idx):
+        if self.data is None:
+            _data = h5py.File(self.file_path, 'r')['image']
+            self.data = _data
+        if self.label is None:
+            self.label = h5py.File(self.file_path, 'r')['signal']
+            
+        image = self.covertFromNdarrayToTensorRGB(self.data[idx])
+        label = int(self.label[idx]) 
+        return image, label```
+
+</details>
   
   #### CNN
   Variation 1: Converting to PNG
