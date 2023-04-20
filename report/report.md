@@ -47,7 +47,7 @@ The weak nuclear force is responsible for the transformation of one type of part
 The discovery of the W-boson was a major triumph of experimental particle physics. The first evidence for the existence of the W-boson came from experiments at CERN in the 1980s, and the discovery was later confirmed by experiments at Fermilab in the United States.
 
 In summary, the W-boson is a fundamental particle that mediates the weak nuclear force and is responsible for the transformation of one type of particle into another. Its discovery was a major milestone in our understanding of the universe at the most fundamental level.
-[7][8][9][10]
+[7] [8] [9] [10]
 
   ### Project description
 
@@ -291,6 +291,14 @@ Our initial hypothesis that boson data has low diversity was wrong. If our hypot
 
 ## Conclusion and discussion
 
+The accuracy achieved seems to indicate that using CNN to classify W-bosons could be a viable approach. The accuracy on both validation and unseen test sets indicates that with smaller sample size, the training can still achieve an accurate result. Despite the good results, the validation methods used in the project are subpar technical workarounds, so the level of confidence regarding the true accuracy is not ideal and not conclusive. Struggles with both datashape and formats have put big constraints on the effectiveness of the project and have highlighted a need for a streamlined integration between FastAi and HDF5 datasets. 
+
+Exploring other CNN libraries, bar FastAi, have the potential to yield better results, but could not be performed or verified during the project. It could also prove beneficial to explore an ensemble of both tabular and image-data.
+
+
+Lastly the overall conclusion is that the project is considered a success, justified by the indication that CNN is a viable way of classifying Jet-imagedata, thus achieving the main goal. Despite the technical difficulties connected to FastAi and the HDF5-dataset, the project still has managed to show signs that CNN can be a valuable tool when it comes to Jet-classification-tasks. 
+
+
 
 ## References
 
@@ -322,13 +330,16 @@ Our initial hypothesis that boson data has low diversity was wrong. If our hypot
   
   [8]:  https://home.cern/science/physics/jet-physics-lhc  
   
+  
   "Jet Substructure at the Large Hadron Collider: A Review of Recent Advances in Theory and Machine Learning" article from Annual Review of Nuclear and Particle Science 
   
   [9]:  https://www.annualreviews.org/doi/full/10.1146/annurev-nucl-102019-025022 
   
+  
   "Jet Physics" lecture notes from the University of Oxford
   
   [10]:  https://www2.physics.ox.ac.uk/sites/default/files/2019-02/Jet_Physics.pdf 
+  
   
   The HDF Group, the organization responsible for developing and maintaining HDF5
   
