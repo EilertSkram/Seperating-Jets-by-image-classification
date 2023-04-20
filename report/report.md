@@ -248,9 +248,11 @@ XGBoost and Random Forest performed the best out of the four, resulting in F1 sc
 
 
   
-  ## Baseline mean image
+## Baseline mean image
 
-![Initial CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/jet_batch.png)
+Using [this notebook](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/mean-image-base-line.ipynb) We experiment with using a mean image to classify the jets.
+
+  ![Initial CNN](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/jet_batch.png)
 
 The figure displays one of the batches in the early state of the project. At first glance, it looks like the boson images have a common occurring pattern that is different from the general images. In the boson images, we can see that the pixels in the middle are more activated and are appearing in a straight line, while in the general images, the activations are more sparse.
 
