@@ -106,7 +106,7 @@ Because of the data being structured in tables, the dividing of the dataset is n
 ## Approach 
 
   
-<details>
+
   
 ### Initial Plan
 Initially we wanted to compare the performance of two models trained on the tabular data and the images respectively.
@@ -136,6 +136,7 @@ Approach 2: Creating a custom dataset
 
 Function from the dataset class:
 ```    
+
       def __getitem__(self, idx):
         if self.data is None:
             _data = h5py.File(self.file_path, 'r')['image']
@@ -146,9 +147,9 @@ Function from the dataset class:
         image = self.covertFromNdarrayToTensorRGB(self.data[idx])
         label = int(self.label[idx]) 
         return image, label
+        
   ```
 
-</details>
   
   #### CNN
   Variation 1: Converting to PNG
