@@ -337,7 +337,24 @@ For simplicity's sake, valley was chosen, rather than finding an in-between rate
 Next, it was fine-tuned using the FastAI fine_tune method over a period of 20 epochs. An early stoppage callback function with patience=4 and min_delta=0.01 was implemented. In this context, early stoppage refers to the stopping of the model if no improvement of at least 0.01 is observed between the best measured value and the current value after three epochs. learn.fine_tune(20, lrs.valley, cbs=EarlyStoppingCallback(monitor='accuracy', min_delta=0.01, patience=4)) Each epoch took around 2 hours and ended up indicating an accuracy of around 83%
 
 
-| epoch |	train_loss |	valid_loss |	accuracy |	time| |-------|------------|--------------|---------|----| |0 	|0.397031| 	0.390257 	|0.827182 |	2:02:01| |1 	|0.385442 |	0.397020 	|0.822535 	|2:01:58| |2 	|0.382048 	|0.390109 	|0.826784 	|2:01:59| |3 |	0.381820 	|0.402441 	|0.822551 	|2:01:57| |4| 	0.391494 	|0.381235 |	0.831185 	|2:02:02| 
+learn.fine_tune(
+    20, 
+    lrs.valley, 
+    cbs=EarlyStoppingCallback(monitor='accuracy',min_delta=0.01, patience=4)
+)
+
+
+```
+
+Each epoch took around 2 hours and ended up indicating an accuracy of around 83%
+
+| epoch |	train_loss |	valid_loss |	accuracy |	time|
+|-------|------------|--------------|---------|----|
+|0 	|0.397031| 	0.390257 	|0.827182 |	2:02:01|
+|1 	|0.385442 |	0.397020 	|0.822535 	|2:01:58|
+|2 	|0.382048 	|0.390109 	|0.826784 	|2:01:59|
+|3 |	0.381820 	|0.402441 	|0.822551 	|2:01:57|
+|4| 	0.391494 	|0.381235 |	0.831185 	|2:02:02|
 
 
 
@@ -357,8 +374,9 @@ This was done in the [boson-cnn-final_val_epoch] notebook. Here we use the defau
 This is a bit lower than the run with a custom learning rate and is probably due to the default learning rate. The confusion matrix shows that we have some higher false positives, which we can argue is good for a model like this. The point of training the model is to classify w-boson jets from general jets for further studying. [final_val_epoch] achieved an accuracy of 82,84% on the unseen validation data. 
 
 	
-| epoch |	train_loss |	valid_loss |	accuracy |	time| |-------|------------|--------------|---------|----| |0 	|0.400126 	|0.386640 |	0.828495 	|09:44|
-
+| epoch |	train_loss |	valid_loss |	accuracy |	time|
+|-------|------------|--------------|---------|----|
+|0 	|0.400126 	|0.386640 |	0.828495 	|09:44|
 
 
 
