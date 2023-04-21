@@ -194,7 +194,26 @@ dblock = DataBlock(blocks    = (ImageBlock, CategoryBlock),
 
 This is the approach that the rest of the project is built upon.
 
-  
+
+## Tabular Data - Decision Trees
+
+To verify that using CNN for classifying Jets was a competitive approach, variations of decision trees were created for the tabular data in the Jet-dataset. Similar to the CNN-baseline model, little to no tweaks to the dataset was done. The task is a binary classification problem, so F1 score was used as the metric of performance regarding accuracy and recall.
+
+ 
+
+One decision tree and three decision tree ensembles were run, mainly relying on the SKLearn library. Cross validation was used with the fold variable as ``cv = 10``, meaning the data will be divided into 10 equal parts and the model will be trained and evaluated 10 times, with each part used as the validation data once. The mean and standard deviation of the scores for each model was then calculated and printed. 
+
+ 
+|  Model | F1 Score Mean | F1 Score Standard deviation|
+|--------- |--------- | ------ |
+| XGBoost | 0.813 | 0.00096 |
+| SKLearn Gradient Boost | 0.809 | 0.00104985 |
+| SKLearn Random Forest | 0.8104 | 0.0014667 |
+| SKLearn Decision Tree | 0.732 | 0.001601 |
+
+
+XGBoost and Random Forest performed the best out of the four, resulting in F1 scores of 81,3 and 81,0 respectively, thus being chosen as the tabular data-models for the CNN-model to compete with.
+
 
  ## CNN
 
@@ -218,29 +237,8 @@ Pre-trained models were used, setting fine tuning for 5 epochs, then repeat the 
 
 Both architectures performed reasonably well. However, attempting to increase the complexity of the architecture by adding additional convolutional layers, we found that the accuracy of the model actually decreased. In fact, we observed a consistent trend where the accuracy decreased as the complexity of the model increased, indicating that a more complex architecture was not necessarily better. The trend was hypothesized to be connected to the simplistic and small image size, meaning additional convolutions wouldn't necessarily add information gain.
 
- 
-## Tabular Data - Decision Trees
 
-To verify that using CNN for classifying Jets was a competitive approach, variations of decision trees were created for the tabular data in the Jet-dataset. Similar to the CNN-baseline model, little to no tweaks to the dataset was done. The task is a binary classification problem, so F1 score was used as the metric of performance regarding accuracy and recall.
-
- 
-
-One decision tree and three decision tree ensembles were run, mainly relying on the SKLearn library. Cross validation was used with the fold variable as ``cv = 10``, meaning the data will be divided into 10 equal parts and the model will be trained and evaluated 10 times, with each part used as the validation data once. The mean and standard deviation of the scores for each model was then calculated and printed. 
-
- 
-|  Model | F1 Score Mean | F1 Score Standard deviation|
-|--------- |--------- | ------ |
-| XGBoost | 0.813 | 0.00096 |
-| SKLearn Gradient Boost | 0.809 | 0.00104985 |
-| SKLearn Random Forest | 0.8104 | 0.0014667 |
-| SKLearn Decision Tree | 0.732 | 0.001601 |
-
-
-XGBoost and Random Forest performed the best out of the four, resulting in F1 scores of 81,3 and 81,0 respectively, thus being chosen as the tabular data-models for the CNN-model to compete with.
-
-
-
-
+The accuracies seems to indicate that an CNN-approach could work at least as good as a tabular data-model.
   
 ## Baseline mean image
 
