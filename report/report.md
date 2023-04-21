@@ -46,14 +46,7 @@ Jets are important in particle physics because they are a signature of high-ener
   
   The W-boson is one of the fundamental particles in the Standard Model of particle physics. It is an elementary particle that mediates the weak nuclear force, which is responsible for the radioactive decay of particles, as well as the fusion reactions that power the sun.
 
-The W-boson comes in two varieties, the W+ and the W-. The W+ carries a positive electric charge, while the W- carries a negative electric charge. Both W-bosons have a mass of approximately 80 GeV/c^2 and a lifetime of about 3×10^−25 seconds.
-
-The weak nuclear force is responsible for the transformation of one type of particle into another. For example, the decay of a neutron into a proton, an electron, and an antineutrino is mediated by the exchange of a W- boson. Similarly, the fusion of two protons in the sun to form a deuterium nucleus is mediated by the exchange of a W+ boson.
-
-The discovery of the W-boson was a major triumph of experimental particle physics. The first evidence for the existence of the W-boson came from experiments at CERN in the 1980s, and the discovery was later confirmed by experiments at Fermilab in the United States.
-
-In summary, the W-boson is a fundamental particle that mediates the weak nuclear force and is responsible for the transformation of one type of particle into another. Its discovery was a major milestone in our understanding of the universe at the most fundamental level.
-[7] [8] [9] [10]
+The W-boson comes in two varieties, the W+ and the W-. The W+ carries a positive electric charge, while the W- carries a negative electric charge. Both W-bosons have a mass of approximately 80 GeV/c^2 and a lifetime of about 3×10^−25 seconds.[7] [8] [9] [10]
 
   ### Project description
 
@@ -72,7 +65,8 @@ In summary, the W-boson is a fundamental particle that mediates the weak nuclear
 
   ### Goals
 
-  - Classifying the different jets
+  - Research if CNN's can be an effective alternative when classifying W-bosons and general jets.
+  - Comparing CNN's performance agains other models trained on the tabular data.
   - Experiment with different models and architectures.
   - If there is time, expand to other particles.
   
@@ -118,8 +112,6 @@ Because of the data being structured in tables, the dividing of the dataset is n
 
   
 ### Initial Plan
-Initially we wanted to compare the performance of two models trained on the tabular data and the images respectively.
-
 Since the dataset contained both tabular and imagedata, there was an aim to establish a performance measure by leveraging a tabular data model and comparing it to a vision learner. 
 
 ### Initial technical difficulties using Fastai image classifier
