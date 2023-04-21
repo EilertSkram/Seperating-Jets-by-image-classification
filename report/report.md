@@ -252,7 +252,7 @@ Each epoch took around 2 hours and ended up indicating an accuracy of around 83%
 |4| 	0.391494 	|0.381235 |	0.831185 	|2:02:02|
 
 
-The method ``Learner.validate()`` could not be run due to errors with the dataloaders and the HDF5 datasets, so a workaround was training the model on the training data, then finetuning 1 epoch on the unseen test data. The final model achieved an accuracy of 82,84% on the unseen test data. 
+The method ``Learner.validate()`` could not be run due to errors with the dataloaders and the HDF5 datasets, so a workaround was training the model on the training data, then finetuning 1 epoch on the unseen test data. [The final model](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/w-boson-cnn-final_val_epok.ipynb) achieved an accuracy of 82,84% on the unseen test data. 
 
 | epoch |	train_loss |	valid_loss |	accuracy |	time|
 |-------|------------|--------------|---------|----|
