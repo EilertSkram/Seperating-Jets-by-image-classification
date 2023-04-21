@@ -325,6 +325,40 @@ Our initial hypothesis that boson data has low diversity was wrong. If our hypot
 
 ### Results of CNN the model
 
+Based on the initial exploration of the micro dataset, the ConvNext model architecture, specifically the ``convnext_tiny`` variant, was determined to be the most effective with a baseline accuracy of 80.2%. Thus, ConvNext Tiny was chosen as the model for further exploration. The final experiment was divided into two notebooks, [boson-cnn-final](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/w-boson-cnn-final.ipynb) and [boson-cnn-final_val_epoch](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/w-boson-cnn-final_val_epoch). The two notebooks have only some small differences.
+
+
+[boson-cnn-final] A custom learning rate was found using FastAi's lr_find method with the suggested functions set as minimum, steep, valley, slide
+
+![learning rate](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/learning_rate.png) 
+
+For simplicity's sake, valley was chosen, rather than finding an in-between rate. The default learning rate is 0.001, so using the valley is a bit over the default learning rate.
+
+Next, it was fine-tuned using the FastAI fine_tune method over a period of 20 epochs. An early stoppage callback function with patience=4 and min_delta=0.01 was implemented. In this context, early stoppage refers to the stopping of the model if no improvement of at least 0.01 is observed between the best measured value and the current value after three epochs. learn.fine_tune(20, lrs.valley, cbs=EarlyStoppingCallback(monitor='accuracy', min_delta=0.01, patience=4)) Each epoch took around 2 hours and ended up indicating an accuracy of around 83%
+
+
+| epoch |	train_loss |	valid_loss |	accuracy |	time| |-------|------------|--------------|---------|----| |0 	|0.397031| 	0.390257 	|0.827182 |	2:02:01| |1 	|0.385442 |	0.397020 	|0.822535 	|2:01:58| |2 	|0.382048 	|0.390109 	|0.826784 	|2:01:59| |3 |	0.381820 	|0.402441 	|0.822551 	|2:01:57| |4| 	0.391494 	|0.381235 |	0.831185 	|2:02:02| 
+
+
+
+The method Learner.validate() could not be run due to errors with the dataloaders and the HDF5 datasets, so a workaround was training the model on the training data, then fine-tuning 1 epoch on the unseen test data.
+
+
+
+This was done in the [boson-cnn-final_val_epoch] notebook. Here we use the default learning rate, and the learner has also set the n_in=1. Since the data has a shape of torch.Size([64, 1, 200, 200]), the learner will automatically add 3 channels to the tensors. So, if we do not set the n_in=1, the data won’t fit the learner.
+
+
+![fine tune](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/fine_tune.png)
+
+
+![confusion matrix](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/confusion_matrix.png)
+
+
+This is a bit lower than the run with a custom learning rate and is probably due to the default learning rate. The confusion matrix shows that we have some higher false positives, which we can argue is good for a model like this. The point of training the model is to classify w-boson jets from general jets for further studying. [final_val_epoch] achieved an accuracy of 82,84% on the unseen validation data. 
+
+	
+| epoch |	train_loss |	valid_loss |	accuracy |	time| |-------|------------|--------------|---------|----| |0 	|0.400126 	|0.386640 |	0.828495 	|09:44|
+
 
 
 
