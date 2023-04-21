@@ -11,6 +11,10 @@
   CNN - A convolutional neural network (CNN) is a type of artificial neural network used primarily for image recognition and processing, due to its ability   to recognize patterns in images. [1]
   
   Decision Tree - A decision tree is a type of supervised learning algorithm used in machine learning and data mining. It works by recursively partitioning the data into subsets based on the values of one or more input features, and then making decisions based on the resulting tree-like structure.[15] 
+  
+  Vision Learner - A vision learner is a machine learning algorithm that specializes in learning from visual data, such as images and videos. It is designed to automatically identify patterns, features, and relationships within the visual data, and use this information to make predictions or classifications. [16]
+  
+  [16]: https://arxiv.org/abs/2002.04688
     
 [15]: https://www.geeksforgeeks.org/decision-tree/. 
 
@@ -115,11 +119,10 @@ Because of the data being structured in tables, the dividing of the dataset is n
 ### Initial Plan
 Initially we wanted to compare the performance of two models trained on the tabular data and the images respectively.
 
-#### Random forest
-We picked random forest at random, and created a model that got close to 80% accuracy. Notably, to be able to use the sklearn’s top level api we had to flatten the tables into a single tabular datafile.
+Since the dataset contained both tabular and imagedata, there was an aim to establish a performance measure by leveraging a tabular data model and comparing it to a vision learner. 
 
-#### Fastai image classifier
-We got completely stuck when trying to create the image classifier. There seemed to be a compatibility issue as all of the top level api’s expected the images to be in separate files, and to be given a list of paths to the files. 
+### Initial technical difficulties using Fastai image classifier
+Initially there was an obstacle in utilizing fastai's vision learner. We were unable to use the learner due to the unavailability of a dataloader capable of loading the HDF5-dataset. This limitation hindered our ability to effectively incorporate fastai's vision learner. Additionally, we identified a compatibility issue with the top-level APIs that required the images to be in separate files and be given a list of paths to the files.
 
 ### Divide and conquer
  There was little documentation to help with our specific problem, however, we found some promising work of people creating custom datasets from hdf5 files. This custom dataset approach was not directly applicable to our situation, but it was close enough to warrant taking a closer look. 
