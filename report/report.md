@@ -319,11 +319,6 @@ The method Learner.validate() could not be run due to errors with the dataloader
 
 
 This was done in the [boson-cnn-final_val_epoch] notebook. Here we use the default learning rate, and the learner has also set the n_in=1. Since the data has a shape of torch.Size([64, 1, 200, 200]), the learner will automatically add 3 channels to the tensors. So, if we do not set the n_in=1, the data won’t fit the learner.
-
-
-![fine tune](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/fine_tune.png)
-
-
 ![confusion matrix](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/confusion_matrix.png)
 
 
