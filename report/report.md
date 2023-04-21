@@ -253,6 +253,7 @@ Each epoch took around 2 hours and ended up indicating an accuracy of around 83%
 
 
 The method ``Learner.validate()`` could not be run due to errors with the dataloaders and the HDF5 datasets, so a workaround was training the model on the training data, then finetuning 1 epoch on the unseen test data. The final model achieved an accuracy of 82,84% on the unseen test data. 
+
 | epoch |	train_loss |	valid_loss |	accuracy |	time|
 |-------|------------|--------------|---------|----|
 |0 	|0.400126 	|0.386640 |	0.828495 	|09:44|
