@@ -289,7 +289,7 @@ Our initial hypothesis that boson data has low diversity was wrong. If our hypot
 Based on the initial exploration of the micro dataset, the ConvNext model architecture, specifically the ``convnext_tiny`` variant, was determined to be the most effective with a baseline accuracy of 80.2%. Thus, ConvNext Tiny was chosen as the model for further exploration. The final experiment was divided into two notebooks, [boson-cnn-final](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/w-boson-cnn-final.ipynb) and [boson-cnn-final_val_epoch](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/w-boson-cnn-final_val_epoch). The two notebooks have only some small differences.
 
 
-[boson-cnn-final] A custom learning rate was found using FastAi's lr_find method with the suggested functions set as minimum, steep, valley, slide
+A custom learning rate was found using FastAi's lr_find method with the suggested functions set as minimum, steep, valley, slide
 
 ![learning rate](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/learning_rate.png) 
 
