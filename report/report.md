@@ -6,7 +6,8 @@
 
   LHC - Large Hadron Collider
   
-  ATLAS - asdsadasd
+  ATLAS - ATLAS is one of two general-purpose detectors at the Large Hadron Collider (LHC). It investigates a wide range of physics, from the Higgs boson to extra dimensions and particles that could make up dark matter. [17]
+  [17]: https://home.cern/science/experiments/atlas
   
   CNN - A convolutional neural network (CNN) is a type of artificial neural network used primarily for image recognition and processing, due to its ability   to recognize patterns in images. [1]
   
