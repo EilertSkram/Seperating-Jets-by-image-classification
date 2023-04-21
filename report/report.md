@@ -284,7 +284,7 @@ The method calculates the absolute difference between the mean value of the inpu
 Our initial hypothesis that boson data has low diversity was wrong. If our hypothesis was right, we would have gotten a higher accuracy, but the baseline image predictor is not better than guesswork. This shows the diversity of the data, and we need a more sophisticated way of identifying patterns in the data.
 
 
-### Results of CNN the model
+## Results of CNN the model
 
 Based on the initial exploration of the micro dataset, the ConvNext model architecture, specifically the ``convnext_tiny`` variant, was determined to be the most effective with a baseline accuracy of 80.2%. Thus, ConvNext Tiny was chosen as the model for further exploration. The final experiment was divided into two notebooks, [boson-cnn-final](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/w-boson-cnn-final.ipynb) and [boson-cnn-final_val_epoch](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/nbs/w-boson-cnn-final_val_epoch). The two notebooks have only some small differences.
 
