@@ -10,9 +10,11 @@
   
   CNN - A convolutional neural network (CNN) is a type of artificial neural network used primarily for image recognition and processing, due to its ability   to recognize patterns in images. [1]
   
-  Decision Tree - dasdas
-  
-  Random Forest - Random Forest is a supervised machine learning algorithm that is used for classification, regression, and other tasks. It is an ensemble learning method that combines multiple decision trees into a single model. Each decision tree in the Random Forest is trained on a random subset of the training data and a random subset of the features. The output of the Random Forest is determined by aggregating the results of all the decision trees in the ensemble, using either the mode (for classification) or the mean (for regression). Random Forest has several advantages over single decision trees, such as reduced overfitting, increased accuracy, and the ability to handle missing values and outliers. [2]
+  Decision Tree - A decision tree is a type of supervised learning algorithm used in machine learning and data mining. It works by recursively partitioning the data into subsets based on the values of one or more input features, and then making decisions based on the resulting tree-like structure.[15] 
+    
+[15]: https://www.geeksforgeeks.org/decision-tree/. 
+
+  Random Forest - Random Forest is a supervised machine learning algorithm that is used for classification, regression, and other tasks. It is an ensemble learning method that combines multiple decision trees into a single model. Each decision tree in the Random Forest is trained on a random subset of the training data and a random subset of the features.[2]
 
 
 
@@ -399,5 +401,4 @@ Lastly the overall conclusion is that the project is considered a success, justi
   Getting to Know Your Data 2.4.7 Cosine Similarity 
 
   [12]: https://www.sciencedirect.com/topics/computer-science/cosine-similarity
-  
 
