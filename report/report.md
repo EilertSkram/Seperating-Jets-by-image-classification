@@ -336,6 +336,7 @@ For simplicity's sake, valley was chosen, rather than finding an in-between rate
 
 Next, it was fine-tuned using the FastAI fine_tune method over a period of 20 epochs. An early stoppage callback function with patience=4 and min_delta=0.01 was implemented. In this context, early stoppage refers to the stopping of the model if no improvement of at least 0.01 is observed between the best measured value and the current value after three epochs. learn.fine_tune(20, lrs.valley, cbs=EarlyStoppingCallback(monitor='accuracy', min_delta=0.01, patience=4)) Each epoch took around 2 hours and ended up indicating an accuracy of around 83%
 
+```
 
 learn.fine_tune(
     20, 
