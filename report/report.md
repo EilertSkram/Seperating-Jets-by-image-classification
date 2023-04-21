@@ -219,9 +219,40 @@ Both architectures performed reasonably well. However, attempting to increase th
 ### Fine Tuning CNN
 Based on the initial exploration of the micro dataset, the ConvNext model architecture, specifically the ``convnext_tiny`` variant, was determined to be the most effective with a baseline accuracy of 80.2%.
 
-Next, the model was fine-tuned using the FastAI ``fine_tune`` method over a period of 20 epochs. An early stoppage callback-function with ``patience=3`` and ``min_delta=0.01`` was implemented. In this context, early stoppage refers to the stopping of the model if no improvement of at least 0.01 is observed between the best measured value and the current value after three epochs.
+The custom learning rate was found using FastAi's ``lr_find``-method with the suggested functions set as ``minimum, steep, valley, slide``
 
-The fine-tuning process was conducted on the micro dataset and validated using the test dataset. The method ``validate``could not be run due to errors with the dataloaders and the HDF5 datasets, so a workaround was finetuning 1 epoch on the test data. The final model achieved an accuracy of Y after X epochs.
+![learning rate](https://github.com/EilertSkram/Seperating-Jets-by-image-classification/blob/main/report/figures/learning_rate.png)
+
+For simplicity's sake, valley was chosen, rather than finding an inbetween rate. 
+
+
+
+Next, the model was fine-tuned using the FastAI ``fine_tune`` method over a period of 20 epochs. An early stoppage callback-function with ``patience=4`` and ``min_delta=0.01`` was implemented. In this context, early stoppage refers to the stopping of the model if no improvement of at least 0.01 is observed between the best measured value and the current value after three epochs.
+```
+
+
+
+learn.fine_tune(
+    20, 
+    lrs.valley, 
+    cbs=EarlyStoppingCallback(monitor='accuracy',min_delta=0.01, patience=4)
+)
+
+
+```
+
+Each epoch took around 2 hours and ended up indicating an accuracy of around 83%
+
+| epoch |	train_loss |	valid_loss |	accuracy |	time|
+|-------|------------|--------------|---------|----|
+|0 	|0.397031| 	0.390257 	|0.827182 |	2:02:01|
+|1 	|0.385442 |	0.397020 	|0.822535 	|2:01:58|
+|2 	|0.382048 	|0.390109 	|0.826784 	|2:01:59|
+|3 |	0.381820 	|0.402441 	|0.822551 	|2:01:57|
+|4| 	0.391494 	|0.381235 |	0.831185 	|2:02:02|
+
+
+The method ``Learner.validate()`` could not be run due to errors with the dataloaders and the HDF5 datasets, so a workaround was training the model on the training data, then finetuning 1 epoch on the unseen test data. The final model achieved an accuracy of 82,84% on the unseen test data. 
 
  
  
